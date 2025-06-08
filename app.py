@@ -42,6 +42,10 @@ ax.grid(True)
 
 if result:
     theta1, theta2 = result
+    theta1_deg = np.degrees(theta1)
+    theta2_deg = np.degrees(theta2)
+    st.markdown(f"**Joint Angles:** θ₁ = {theta1_deg:.2f}°, θ₂ = {theta2_deg:.2f}°")
+
     points = forward_kinematics(theta1, theta2)
     xs, ys = zip(*points)
     ax.plot(xs, ys, marker='o', linewidth=3, markersize=8)
